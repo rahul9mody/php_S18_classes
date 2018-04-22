@@ -1,24 +1,10 @@
 <?php
-
-	function getUsers() 
-	{
-	    global $db;
-	    $query = 'SELECT * FROM accounts
-	              ORDER BY id';
-	    $statement = $db->prepare($query);
-	    $statement->execute();
-	    return $statement; 
-
-	}
-
-
-
-	class UserDB 
+	class UsersDB 
 	{
 	    public static function getUsers() 
 	    {
 	        $db = Database::getDB();
-	        $query = 'SELECT * FROM accounts'
+	        $query = 'SELECT * FROM accounts';
 	        $statement = $db->prepare($query);
 	        $statement->execute();
 	        
